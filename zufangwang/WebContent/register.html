@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>用户注册-北京链家网</title>
+<link rel="stylesheet" href="css_register/common.css">
+<link rel="stylesheet" href="css_register/login.css">
+
+</head>
+<body>
+
+	<div class="user-login">
+		<div class="back">
+			<a href="zufang.html" class="fl">返回租房网首页</a>
+			<div class="fr">
+				已有租房网账号？<a
+					href="login.html"
+					id="actResetUrl">马上登录</a>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="bg-image">
+				<img src="images/login-bg.jpg">
+			</div>
+			<div class="logo"></div>
+			<div class="reset-pwd registerred">
+				<form
+					action="#"
+					method="post" id="registerForm">
+					<input type="hidden" name="redirect" id="r"
+						value="#">
+					<ul>
+						<li class=""><input type="text" name="mobile"
+							placeholder="请输入手机号" validate="notNull,isTel" validatename="手机号"
+							class="phonecode"><a onclick="javascript:;"
+							class="send actRegisterSMS">发送验证码</a><i>*</i></li>
+						<li><input type="text" placeholder="请输短信验证码"
+							name="verifyCode" class="actCheckVerify" validatename="短信验证码"
+							validate="notNull"><i>*</i></li>
+						<li><input type="text" name="nickName" placeholder="昵称"></li>
+						<li><input type="password" name="password" id="password"
+							placeholder="请输入密码" validate="notNull,minLength"
+							validatedata="minLength=6" validatename="密码"><i>*</i></li>
+						<li><input type="password" placeholder="请确认新密码"
+							validate="notNull,isSame" validatedata="isSame=#password"
+							validatename="确认密码"><i>*</i></li>
+						<li class="mt10"><label><input type="checkbox"
+								class="check-agreed alwayCheck" validate="isChecked"
+								validatename="链家用户使用协议">我已阅读并同意<a
+								href="http://www.lianjia.com/zhuanti/protocol" target="_blank">《链家用户使用协议》</a></label></li>
+						<li><input type="submit" value="立即注册"
+							class="up-pwd actSubmit"></li>
+					</ul>
+				</form>
+			</div>
+		</div>
+
+		<div class="lianjia-footer-simple">
+			xxx公司 / 许可证号<br>xxx公司保留全部权利&nbsp;
+		</div>
+
+		
+		<div id="only" data-city="login" data-page="login_register"></div>
+
+	</div>
+</body>
+</html>
