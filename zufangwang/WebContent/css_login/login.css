@@ -1,0 +1,544 @@
+::selection {
+	background-color: rgba(13, 173, 81, 0.2);
+	color: #333
+}
+
+::-moz-selection {
+	background-color: rgba(13, 173, 81, 0.2);
+	color: #333
+}
+
+::-webkit-selection {
+	background-color: rgba(13, 173, 81, 0.2);
+	color: #333
+}
+
+.tip-msg,.tip-msg-error {
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	min-width: 200px;
+	border-radius: 5px;
+	position: absolute;
+	padding: 5px 10px;
+	text-align: center;
+	-webkit-animation: fadeIn .5s ease-in;
+	-moz-animation: fadeIn .5s ease-in;
+	-ms-animation: fadeIn .5s ease-in;
+	-o-animation: fadeIn .5s ease-in;
+	animation: fadeIn .5s ease-in
+}
+
+.tip-msg-error {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7
+}
+
+.user-login {
+	padding-top: 60px
+}
+
+.user-login .bg-image {
+	display: block;
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	z-index: -1
+}
+
+.user-login .bg-image img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 50%;
+	min-height: 50%
+}
+
+.user-login .back {
+	width: 526px;
+	margin: 0 auto 40px auto;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	color: #fff
+}
+
+.user-login .back a {
+	color: #fff;
+	font-size: 14px
+}
+
+.user-login .back .fr a {
+	border: 1px solid #fff;
+	border-radius: 2px;
+	padding: 5px 10px;
+	margin-left: 10px
+}
+
+.user-login .wrapper {
+	background: #fff;
+	width: 500px;
+	padding: 60px 12px 50px 12px;
+	box-shadow: 0 1px 14px rgba(0, 0, 0, 0.3)
+}
+
+.user-login .wrapper .mt10 {
+	padding: 3px 0
+}
+
+.user-login .logo {
+	background: url(../images/login-logo.png) no-repeat;
+	width: 322px;
+	height: 55px;
+	margin: 0 auto 50px auto;
+	background-size: 322px 55px;
+}
+
+.user-login .login-cun {
+	width: 425px;
+	margin: 0 auto
+}
+
+.user-login .login-cun .tab {
+	height: 53px
+}
+
+.user-login .login-cun .tab a {
+	width: 209px;
+	height: 53px;
+	display: inline-block;
+	line-height: 53px;
+	text-align: center;
+	font-size: 16px;
+	color: #333;
+	float: left;
+	cursor: pointer;
+	border: 1px solid #fff;
+	border-bottom: 1px solid #e3e3e3
+}
+
+.user-login .login-cun .tab a.hover {
+	border: 1px solid #e3e3e3;
+	border-bottom: 0
+}
+
+.user-login .login-cun ul li {
+	width: 420px;
+	line-height: 47px;
+	color: #555;
+	font-size: 14px;
+	margin-top: 15px
+}
+
+.user-login .login-cun ul li a {
+	color: #555
+}
+
+.user-login .login-cun ul li .li-bg {
+	position: relative
+}
+
+.user-login .login-cun ul li .li-bg label {
+	width: 14px;
+	height: 19px;
+	display: inline-block;
+	position: absolute;
+	left: 15px;
+	top: 15px
+}
+
+.user-login .login-cun ul li .li-bg input {
+	height: 45px;
+	width: 361px;
+	line-height: 45px;
+	vertical-align: middle;
+	border: 1px solid #e3e3e3;
+	padding: 0 15px 0 45px;
+	color: #999;
+	font-size: 14px;
+	background: #fff
+}
+
+.user-login .login-cun ul li .li-bg input:focus {
+	border: 1px solid #a8a8a8
+}
+
+.user-login .login-cun ul li.user-phone label {
+	background: url(../images/sprite_user.png) no-repeat -113px 0
+}
+
+.user-login .login-cun ul li.pwd label {
+	background: url(../images/sprite_user.png) no-repeat -113px -25px
+}
+
+.user-login .login-cun ul li.owner-id label {
+	background: url(../images/sprite_user.png) no-repeat -134px 0;
+	width: 17px;
+	height: 19px
+}
+
+.user-login .login-cun ul li .error p {
+	height: 20px;
+	color: #e4393c;
+	line-height: 20px;
+	display: block;
+	font-size: 12px
+}
+
+.user-login .login-cun ul li .mind-login {
+	margin-right: 10px
+}
+
+.user-login .login-cun ul li button {
+	width: 423px;
+	height: 49px;
+	background-color: #39ac6a;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer
+}
+
+.user-login .login-cun ul li button:hover {
+	background-color: #3cb570;
+	color: #fff
+}
+
+.user-login .login-cun ul li p {
+	display: none
+}
+
+.user-login .user-footer {
+	margin-top: 52px;
+	background: url(../images/footer-bg.png) no-repeat bottom center;
+	height: 80px;
+	text-align: center;
+	padding-top: 20px;
+	line-height: 30px;
+	color: #999
+}
+
+.user-registered {
+	border-top: 1px solid #e3e3e3;
+	text-align: center;
+	font-size: 14px;
+	color: #555;
+	width: 524px;
+	background: #fbfbfb;
+	margin: 0 auto;
+	height: 50px;
+	line-height: 50px
+}
+
+.user-registered a {
+	color: #e4393c
+}
+
+.reset-pwd {
+	width: 425px;
+	margin: 0 auto
+}
+
+.reset-pwd .title {
+	height: 45px;
+	line-height: 45px;
+	width: 420px
+}
+
+.reset-pwd .title span {
+	color: #333;
+	font-size: 20px;
+	float: left
+}
+
+.reset-pwd .title label {
+	float: right;
+	color: #999;
+	position: relative;
+	top: 5px
+}
+
+.reset-pwd li {
+	margin-top: 12px;
+	position: relative
+}
+
+.reset-pwd li p {
+	display: none
+}
+
+.reset-pwd li .send {
+	position: absolute;
+	right: 12px;
+	top: 7px;
+	width: 112px;
+	height: 31px;
+	border: 1px solid #d0d0d0;
+	line-height: 31px;
+	text-align: center;
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	cursor: pointer;
+	background: -webkit-linear-gradient(top, #fff, #fbfbfb);
+	background: -moz-linear-gradient(top, #fff, #fbfbfb);
+	background: -o-linear-gradient(top, #fff, #fbfbfb);
+	background: -ms-linear-gradient(top, #fff, #fbfbfb)
+}
+
+.reset-pwd li .disable {
+	border: 1px solid #d0d0d0;
+	background-color: #f8f8f8
+}
+
+.reset-pwd li input {
+	height: 45px;
+	line-height: 45px;
+	width: 388px;
+	border: 1px solid #e3e3e3;
+	padding: 0 15px;
+	color: #888;
+	font-size: 14px;
+	background: #fff
+}
+
+.reset-pwd li input:focus {
+	border: 1px solid #a8a8a8
+}
+
+.reset-pwd li .up-pwd {
+	width: 420px;
+	background-color: #39ac6a;
+	border: 0;
+	color: #fff;
+	height: 49px;
+	line-height: 49px;
+	font-size: 20px;
+	cursor: pointer
+}
+
+.reset-pwd li .up-pwd:hover {
+	background-color: #3cb570;
+	color: #fff
+}
+
+.reset-pwd li .up-pwd:active {
+	background-color: #4aa063
+}
+
+.reset-pwd li .up-pwd:focus {
+	border: 0
+}
+
+.reset-pwd .error p {
+	color: #e4393c;
+	margin-top: 7px;
+	display: block
+}
+
+.registerred li label {
+	right: 30px
+}
+
+.registerred li label.iagreed {
+	position: relative;
+	top: 4px;
+	background: url(../images/sprite_user.png) -250px -9px;
+	width: 25px;
+	height: 20px;
+	display: inline-block
+}
+
+.registerred li label.iagreed:hover {
+	background: url(../images/sprite_user.png) -250px -35px
+}
+
+.registerred li i {
+	color: #e4393c;
+	font-size: 12px;
+	float: right;
+	line-height: 55px;
+	position: absolute;
+	right: -10px
+}
+
+.registerred li .check-agreed {
+	width: 16px;
+	height: 16px;
+	position: relative;
+	top: 3px;
+	margin-right: 5px
+}
+
+.registerred li a {
+	color: #4fac6a;
+	font-size: 14px
+}
+
+.registerred li .send {
+	right: 12px;
+	border-radius: 2px;
+	background: -webkit-linear-gradient(top, #fff, #fbfbfb);
+	background: -moz-linear-gradient(top, #fff, #fbfbfb);
+	background: -o-linear-gradient(top, #fff, #fbfbfb);
+	background: -ms-linear-gradient(top, #fff, #fbfbfb)
+}
+
+.registerred .pull-right {
+	float: right;
+	margin-right: 20px
+}
+
+@
+-webkit-keyframes fadeIn { 0%{
+	-webkit-transform: scale(.6)
+}
+
+70%{
+-webkit-transform
+:scale
+(1
+.3
+)
+}
+100%{
+-webkit-transform
+:scale(1)
+}
+}
+@
+-moz-keyframes fadeIn { 0%{
+	-moz-transform: scale(.6)
+}
+
+70%{
+-moz-transform
+:scale
+(1
+.3
+)
+}
+100%{
+-moz-transform
+:scale(1)
+}
+}
+@
+-ms-keyframes fadeIn { 0%{
+	-ms-transform: scale(.6)
+}
+
+70%{
+-ms-transform
+:scale
+(1
+.3
+)
+}
+100%{
+-ms-transform
+:scale(1)
+}
+}
+@
+keyframes fadeIn { 0%{
+	transform: scale(.6)
+}
+
+70%{
+transform
+:scale
+(1
+.3
+)
+}
+100%{
+transform
+:scale(1)
+}
+}
+.verifyLayer {
+	background-color: #fff;
+	position: absolute;
+	padding: 45px 40px;
+	-webkit-animation: fadeIn .3s ease-in;
+	-moz-animation: fadeIn .3s ease-in;
+	-ms-animation: fadeIn .3s ease-in;
+	-o-animation: fadeIn .3s ease-in;
+	animation: fadeIn .3s ease-in
+}
+
+.verifyLayer button,.verifyLayer input {
+	width: 250px;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	vertical-align: middle;
+	border: 1px solid #d0d0d0;
+	color: #d0d0d0;
+	font-size: 16px
+}
+
+.verifyLayer img {
+	width: 120px;
+	height: 50px;
+	vertical-align: middle;
+	border: 1px solid #d0d0d0;
+	margin-left: 15px
+}
+
+.verifyLayer button {
+	margin-top: 15px;
+	text-align: center;
+	width: 100%;
+	display: block;
+	color: #fff;
+	background-color: #7a7a7a;
+	cursor: pointer
+}
+
+.verifyLayer button:hover {
+	background-color: #838383
+}
+
+.verifyLayer .error {
+	color: #e4393c;
+	display: block
+}
+
+.verifyLayer a {
+	position: absolute;
+	top: -21px;
+	right: -16px;
+	background: url(../images/detail.png) -293px -125px
+		no-repeat;
+	display: block;
+	width: 41px;
+	height: 56px
+}
+
+.verifyLayer a:hover {
+	background: url(../images/detail.png) -345px -125px
+		no-repeat
+}
+
+.lianjia-footer-simple {
+	background: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	padding-top: 20px;
+	color: #fff
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+     only screen and (min--moz-device-pixel-ratio: 1.5), /* 注意这里的写法比较特殊 */
+     only screen and (-o-min-device-pixel-ratio: 3/2),
+     only screen and (min-device-pixel-ratio: 1.5) {
+     	.user-login .logo{
+     		background: url(../images/login-logo@2x.png);
+     		background-size: 322px 55px;
+     	}
+}
