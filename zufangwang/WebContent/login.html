@@ -1,5 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
-
 <html>
 <head>
 <meta charset="UTF-8"></meta>
@@ -10,12 +9,11 @@
 
 </head>
 <body>
-
 	<div class="user-login">
 		<div class="back">
-			<a href="#" class="fl">返回租房网首页</a>
+			<a href="zufang.html" class="fl">返回租房网首页</a>
 			<div class="fr">
-				还没有租房网账号？<a href="＃">马上注册</a>
+				还没有租房网账号？<a href="register.html">马上注册</a>
 			</div>
 		</div>
 		<div class="wrapper">
@@ -25,7 +23,7 @@
 			<div class="logo"></div>
 			<div class="login-cun">
 				<form id="loginUserForm" class="fm-v clearfix"
-					action="https://passport.lianjia.com/cas/login;jsessionid=0854BDCE60E248081A70339170761EE4-n2?service=http%3A%2F%2Fbj.lianjia.com%2F"
+					action="#"
 					method="post">
 					<input type="hidden" name="redirect" id="r" value="" /> <input
 						type="hidden" name="verifyCode" id="verifyCode" val="" />
@@ -48,9 +46,8 @@
 							</div> <a
 							href="https://passport.lianjia.com/register/resources/lianjia/forget.html?service=http://bj.lianjia.com/"
 							class="fr">找回密码</a></li>
-						<li><input type="hidden" name="lt"
-							value="LT-1887802-4SVo2HKDgAsMdVVVSrERqJG6UHaNFT-www.lianjia.com">
-								<input type="hidden" name="execution" value="e1s1" /><input
+						<li><input type="hidden" name="lt" value="＃"／><input
+							type="hidden" name="execution" value="e1s1" /> <input
 							type="hidden" name="_eventId" value="submit" />
 							<button class="actDoSubmit">立即登录</button></li>
 					</ul>
@@ -60,16 +57,7 @@
 	</div>
 
 	<div class="lianjia-footer-simple">
-		新西兰租房网<br>xxx公司保留权利&nbsp;
-		
+		新西兰租房网<br>xxx公司保留权利&nbsp; 
 	</div>
-	<script src="./用户登录-链家网_files/fe.js"></script>
-	<script src="./用户登录-链家网_files/common.js"></script>
-	<script src="./用户登录-链家网_files/login.js"></script>
-	<script type="text/javascript">
-		require([ "user/UserForm" ], function(UserForm) {
-			new UserForm($("#loginUserForm"))
-		})
-	</script>
 </body>
 </html>
