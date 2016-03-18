@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>新西兰租房网</title>
+<!--set charset to UTF-8， New in HTML5 -->
+<meta charset="UTF-8">
+
+<!-- SEO -->
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name=description content="This is a page">
+<meta name="content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css"
+	href="css/jquery.lightbox-0.5.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/list.css">
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="js/blocksit.min.js"></script>
+<script type="text/javascript" src="js/jquery.lightbox-0.5.min.js"></script>
+<script type="text/javascript" src="js/zufang.js"></script>
+<script type="text/javascript">
+	$(function() {//页面加载完之后自动执行函数 
+		var pageNum = 1;
+
+		loadImages();
+		blockImages();
+
+		//回到顶部事件,500毫秒内回到顶部
+		$("#gotop").click(function() {
+			$("body,html").animate({
+				scrollTop : 0
+			}, '500');
+		});
+
+		//流式布局，numOfCol-->定义列数
+		function blockImages() {
+			$("#container").BlocksIt({
+				numOfCol : 3
+			});
+		}
+
+		//给下拉列表绑定一个change事件
+		$("#category").change(function() {
+			// 清空
+			$("#container").html('');
+			pageNum = 1;
+		});
+
+		//获取图片
+		function loadImages() {
+			var category = "fresh";
+			$.ajax({
+						//请求后台
+						url : 'data.jsp',
+						type : 'post',
+						data : {
+							pageNum : pageNum,
+							category : category
+						},
+						dataType : "Json",
+						//请求成功之后
+						success : function(data) {
+							//动态把图片加载
+							for (var i = 0; i < data.length; i++) {
+								var img = '';
+								img += "<div class='grid'><div class='imgholder'> <img class='lazy' ";
+								img+="src='images/pixel.gif' data-original=' ";
+								img+=data[i].oriUrl;					
+								img+="' width='500' /></div> <strong>";
+								img += data[i].title;
+								img += "</strong> <div class='meta'> <a href=' ";
+								img+=data[i].oriUrl;
+								img+="' class='lightbox'>链接 </a> </div></div>";
+
+								//拼接，连接
+								$("#con-box").append(img);
+							}
+							pageNum++;
+
+								
+							$("a.lightbox").lightBox();
+
+							//流式布局 
+							blockImages();
+							//图片懒加载
+							$("img.lazy").lazyload();
+						}
+
+					});
+		}
+
+		//给窗口绑定滚动事件
+		$(window).scroll(
+				function() {
+					//alert(Number($(window).scrollTop()-$(document).height() - $(window).height()));   
+					//当滚动到底部以上50像素的时候，加载新的内容
+					if (Number($(document).height() - $(window).height()
+							- $(window).scrollTop()) < 500) {
+						loadImages();
+						
+					}
+					if ($(this).scrollTop() > 200) {
+						$("#gotop").fadeIn(400);//淡入
+						
+					} else {
+						$("#gotop").stop().fadeOut(400);//淡出
+						
+					}
+				})
+
+	});
+</script>
+
+</head>
+<body>
+
+	<header class="lianjia-header ">
+		<div class="nav-wrap">
+			<div class="wrapper ">
+
+				<div class="fl">
+
+					<a class="logo" href="http://www.lianjia.com/" title="新西兰租房网">
+						<img src="images/Zufanglogo.png" alt="" />
+					</a>
+				</div>
+				<!-- Login and Register-->
+				<div class="fr login">
+					<span class="welcome"> <a
+						href="http://passport.lianjia.com/register/resources/lianjia/register.html?service=http%3A%2F%2Fbj.lianjia.com%2Fzufang%2F">
+							<span class="log">注册</span>
+					</a>| <a class="btn-login bounceIn actLoginBtn"
+						href="https://passport.lianjia.com/cas/login?service=http%3A%2F%2Fbj.lianjia.com%2Fzufang%2F">
+							<span class="reg">登录</span>
+					</a></span>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!--搜索模块 -->
+	<div class="searchs">
+		<div class="wrapper">
+			<div class="fl" log-mod="search">
+				<div class="search-txt">
+
+					<!--输入框和搜索按钮-->
+					<form class="clear" action="http://bj.lianjia.com/zufang/rs"
+						data-action="/zufang/rs" method="post">
+						<div class="search-tab">
+							<!--输入框前标签-->
+							<div data-bl="switch" class="check" formact="/zufang/rs"
+								actdata="zufang">租房</div>
+							<!--输入框-->
+							<div class="txt-serach">
+								<input class="left txt autoSuggest" name="keyword"
+									autocomplete="off" placeholder="输入新西兰房源" id="keyword-box">
+							</div>
+						</div>
+						<!--搜索按钮-->
+						<button type="submit" data-bl="search" data-el="search"
+							class="act-search btn home-ico ico-search" target="_blank"
+							daty-id="110000">搜索</button>
+					</form>
+				</div>
+			</div>
+			<div class="fr last"></div>
+		</div>
+	</div>
+	<!--＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃-->
+
+	<!-- 面包屑模块 -->
+	<div class="intro clear" mod-id="lj-common-bread">
+		<div class="container">
+			<div class="fl l-txt">
+				<i class="icon"></i>&nbsp;<a href="http://bj.lianjia.com/">新西兰租房网</a><span
+					class="stp">&nbsp;&gt;&nbsp;</span> <a
+					href="http://bj.lianjia.com/zufang/">奥克兰租房</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<div class="filter-box">
+
+			<div class="hd clear">
+				<ul class="tab-lst">
+					<li class="on"><a href=" "><span>奥克兰</span></a></li>
+					<li class="on"><a href=" "><span>东区</span></a></li>
+					<li class="on"><a href=" "><span>西区</span></a></li>
+					<li class="on"><a href=" "><span>南区</span></a></li>
+					<li class="on"><a href=" "><span>中区</span></a></li>
+					<li class="on"><a href=" "><span>北岸</span></a></li>
+				</ul>
+
+				<div class="info">
+					<span class="num">信息真实可靠！</span>
+				</div>
+			</div>
+
+
+			<div>
+				<div class="bd" id="filter-options">
+
+					<!--根据区域进行显示该区域的具体地点-->
+					<dl class="dl-lst clear">
+						<dt>区域：</dt>
+						<dd data-index="0">
+							<div class="option-list">
+								<a href=" " class="on">Auckland</a>
+							</div>
+						</dd>
+					</dl>
+
+					<dl class="dl-lst clear">
+						<dt>租金：</dt>
+						<dd data-index="1">
+							<div class="option-list">
+								<div class="custom" data-type="price">
+									<div class="txt-box">
+										<input type="text" class="txt" name="min_price" data-index="1"
+											value="">
+									</div>
+									&nbsp;-&nbsp;
+									<div class="txt-box">
+										<input type="text" class="txt" name="max_price" data-index="1"
+											value="">
+									</div>
+									&nbsp;新西兰元<input type="button" data-type="price" class="ok"
+										value="确定" style="display: none;">
+
+									<div class="checkbox"
+										style="display: inline-block; vertical-align: top; margin: 5px;">
+										<label id="label-negotiable"> <input type="checkbox"
+											id="negotiable-checkbox" checked=""> 可商
+										</label>
+									</div>
+
+								</div>
+							</div>
+						</dd>
+					</dl>
+
+					<dl class="dl-lst clear">
+						<dt>房型：</dt>
+						<dd data-index="2">
+							<div class="option-list">
+								<a href="" class="on">任意房型</a> <a href="" class="on">搭房</a> <a
+									href="" class="on">普通房</a> <a href="" class="on">主人房</a> <a
+									href="" class="on">整套</a> <a href="" class="on">其它</a>
+							</div>
+						</dd>
+					</dl>
+
+
+				</div>
+
+				<div class="filter-bar01">
+					<div class="sort-bar" id="sort-bar">
+						<span>排序：</span>
+						<div class="sort-parent on">
+							<a href="http://bj.lianjia.com/zufang/"><span>默认</span></a>
+						</div>
+						<div class="sort-parent">
+							<a href="http://bj.lianjia.com/zufang/rco10/"><span>最新</span></a>
+						</div>
+						<div class="sort-parent">
+							<a href="http://bj.lianjia.com/zufang/rco20/"><span>租金低</span></a>
+						</div>
+						<div class="sort-parent">
+							<span>面积</span><i></i>
+							<ul class="sort-children">
+								<li><a href="http://bj.lianjia.com/zufang/rco31/">面积从小到大</a></li>
+								<li><a href="http://bj.lianjia.com/zufang/rco32/">面积从大到小</a></li>
+							</ul>
+						</div>
+						<div class="sort-parent">
+							<a href="http://bj.lianjia.com/zufang/rco40/"><span>地铁距离近</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃-->
+		<!--房源数数据列表-->
+
+		<div id="main-box clear">
+			<div id="con-box">
+					<ul class="house-lst">
+						<!--房源数据1-->
+						<li data-index="1" data-id="apartment001">
+							<!--房源照片-->
+							<div class="pic-panel">
+								<a target="_blank"
+									href="http://bj.lianjia.com/zufang/BJHD91439151.html"><img
+									src="http://image2.ljcdn.com/appro/group2/M00/E7/10/rBAF7FaLfuuAYtzPAAGu2AxBrgM637.jpg.280x210.jpg"
+									data-img="http://image2.ljcdn.com/appro/group2/M00/E7/10/rBAF7FaLfuuAYtzPAAGu2AxBrgM637.jpg.280x210.jpg"
+									alt=" " data-apart-layout="" class="lj-lazy" data-original=""
+									style="display: inline;"></a>
+							</div> <!--房源信息-->
+							<div class="info-panel">
+								<h2>
+									<a target="_blank"
+										href="http://bj.lianjia.com/zufang/BJHD91439151.html"
+										title="房子的描述">房子的描述：精装修大两居室，看房方便拎包入住</a>
+								</h2>
+								<div class="col-1">
+									<div class="where">
+										<a href="http://bj.lianjia.com/xiaoqu/1111027376278/"
+											class="laisuzhou"><span class="region">奥克兰小区&nbsp;&nbsp;</span></a><span
+											class="zone"><span>2室1厅&nbsp;&nbsp;</span></span><span
+											class="meters">100平米&nbsp;&nbsp;</span><span>东</span>
+									</div>
+
+									<div class="chanquan">
+										<div class="left agency">
+											<div class="view-label left">
+
+												<span class="fang-subway-ex"> <span>特点1:距离公交站近</span>
+												</span> <span class="haskey"></span> <span class="haskey-ex">
+													<span>特点2:随时看房</span>
+												</span> <span class="decoration"></span> <span
+													class="decoration-ex"> <span>特点3:精装修</span>
+												</span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-3">
+									<div class="price">
+										<span class="num">7500</span>刀/月
+									</div>
+									<div class="price-pre">2016.01.17 更新</div>
+								</div>
+
+								<!--多少人看过-->
+								<div class="col-2">
+									<div class="square">
+										<div>
+											<span class="num">32</span>人
+										</div>
+										<div class="col-look">看过此房</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+	<div id="gotop"></div>
+</body>
+</html>
