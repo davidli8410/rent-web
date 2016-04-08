@@ -1,4 +1,7 @@
-
+1.How to use:
+  install nodejs
+  in the terminal: npm start
+  in the brower:   http://localhost:8000/app/index.html
 
 ## Application Directory Layout
 
