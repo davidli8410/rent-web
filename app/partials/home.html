@@ -1,0 +1,97 @@
+<
+
+<!--Navigation bar-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+   <!--Navigation bar header-->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Logo</a>
+    </div>
+    <!--Navigation bar collapse area-->
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/home">首页</a></li>
+        <li><a href="#/signin">登录</a></li>
+        <li><a href="#/register">注册</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">更多
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Link4</a></li>
+            <li><a href="#">Link5</a></li>
+            <li><a href="#">Link6</a></li> 
+          </ul>
+        </li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="margin-top: 40px;height: 300px"> 
+  <ul class="list-group col-xs-12 col-sm-12" style="margin-top: 10px">
+    <li class="list-group-item">
+        区域：不限 东城 西城 朝阳 海淀 丰台 石景山 通州 昌平</br></br>
+        租金：不限 1500元以下 1500-2500元 2500-3500元 3500-4500元 4500-5500元</br></br>
+        面积：不限 30平以下 30-50平 50-70平 70-90平 90-120平 120-140平 140-160平 160-200平 200平以上</br></br>
+        房型：不限 一室 二室 三室 四室 五室 五室以上
+    </li>
+
+    <li class="list-group-item">
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="control-label col-sm-1">排序:</label>
+          <div class="col-sm-6">
+              <select class="form-control" name="category" ng-model="orderProp">
+                  <option value="age">最新</option>
+                  <option value="name">租金低</option>
+                  <option value="name">面积</option>
+              </select>
+            </div>
+          </div>
+        <div class="form-group">
+          <label class="control-label col-sm-1">搜索:</label>
+          <div class="col-sm-6">          
+            <input ng-model="query" type="text" class="form-control" placeholder="输入搜索内容" aria-describedby="basic-addon2">
+          </div>
+        </div>
+      </form>
+    </li>    
+  </ul>
+</div>
+
+<div class="container">
+    <div class="row">
+          <div class="panel panel-default">
+                 <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+                        <div class="col-xs-12 col-sm-3">
+                            <img height="40px" class="media-object img-rounded img-responsive"  ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" >
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                           </br>
+                            <h4><a href="#/phones/{{phone.id}}">{{phone.name}}</a></h4></br>
+                            <h5>{{phone.snippet}}</h5></br>
+                            
+                        </div>
+
+                        <div class="col-xs-12 col-md-3">
+                            </br> 
+                            <h4>6500元/月</h4></br>
+                            <h5>2016.03.27 更新</h5></br>
+                            <h5>15人看过此房</h5>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul>
+          </div>
+      </div>
+  </div>
+</div>
+
+</div>
